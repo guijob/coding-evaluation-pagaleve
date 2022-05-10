@@ -34,7 +34,7 @@ const entries = Object.values(cfn.Resources)
     .reduce(
         (obj, v) => {
             const functionName = v.Properties.CodeUri.split('/').reverse()[0];
-            obj[functionName] = path.join(__dirname, 'src', 'lambdas', functionName, 'index.ts');
+            obj[functionName] = path.join(__dirname, 'functions', functionName, 'index.ts');
             return obj;
         },
         {}
