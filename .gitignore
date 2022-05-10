@@ -135,3 +135,4 @@ $RECYCLE.BIN/
 build/
 dist/
 template.packaged.yaml
+.env

@@ -78,6 +78,6 @@ Resources:
 
 Outputs:
   ApiURL:
-    Description: API Gateway endpoint URL for Parkaware auditing back app
+    Description: API Gateway endpoint URL for back app
     Value:
       Fn::Sub: https://${HttpApiGateway}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/

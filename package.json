@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "start": "concurrently -n webpack,sam \"webpack -w\" \"sam local start-api --docker-network lambda-local --env-vars test/resources/env.dev.json\"",
-      "test": "jest --runInBand",
-      "test:ci": "jest --runInBand",
-      "test:watch": "jest --watch",
-      "clean": "rm -rf -v dist/*",
-      "build": "NODE_ENV=${NODE_ENV:-production} webpack-cli",
-      "package": "aws cloudformation package --template-file template.yaml --output-template-file template.packaged.yaml --s3-bucket serverless-auditing-back-${STAGE:-dev}-parkaware",
-      "deploy": "aws cloudformation deploy --template-file template.packaged.yaml --stack-name serverless-auditing-back-${STAGE:-dev} --capabilities CAPABILITY_IAM --parameter-overrides Environment=${STAGE:-dev} SamLocalURL=${SamLocalURL:-DISABLED} --no-fail-on-empty-changeset"
+    "start": "concurrently -n webpack,sam \"webpack -w\" \"sam local start-api --docker-network lambda-local --env-vars test/resources/env.dev.json\"",
+    "test": "jest --runInBand",
+    "test:ci": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "clean": "rm -rf -v dist/*",
+    "build": "NODE_ENV=${NODE_ENV:-production} webpack-cli",
+    "package": "aws cloudformation package --template-file template.yaml --output-template-file template.packaged.yaml --s3-bucket coding-evaluation-pagaleve-back-${STAGE:-dev}-app",
+    "deploy": "aws cloudformation deploy --template-file template.packaged.yaml --stack-name coding-evaluation-pagaleve-back-${STAGE:-dev} --capabilities CAPABILITY_IAM --parameter-overrides Environment=${STAGE:-dev} SamLocalURL=${SamLocalURL:-DISABLED} --no-fail-on-empty-changeset"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +21,8 @@
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "yaml-cfn": "^0.3.1"
+  },
+  "dependencies": {
+    "jest": "^28.1.0"
   }
 }
