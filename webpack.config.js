@@ -71,7 +71,7 @@ module.exports = {
     },
     optimization: {
         minimize: false,
-        namedModules: true
+        moduleIds: 'named'
     },
     devtool: 'source-map',
     plugins: [
