@@ -10,7 +10,7 @@ Globals:
     MemorySize: 128
     Environment:
       Variables:
-        CostumersTable: !Ref CostumersTable
+        CustomersTable: !Ref CustomersTable
         NODE_OPTIONS: "--enable-source-maps"
   Api:
     Cors:
