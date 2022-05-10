@@ -55,11 +55,32 @@ Resources:
         - AWSLambdaBasicExecutionRole
         - AmazonDynamoDBFullAccess
       Events:
-        SpecificStatisticsEndpoint:
+        ListCustomersEndpoint:
           Type: Api
           Properties:
-            Path: /customers/{proxy+}
-            Method: any
+            Path: /customers
+            Method: get
+            RestApiId: !Ref HttpApiGateway
+
+        GetCustomerEndpoint:
+          Type: Api
+          Properties:
+            Path: /customers/{customerId}
+            Method: get
+            RestApiId: !Ref HttpApiGateway
+
+        EditCustomerEndpoint:
+          Type: Api
+          Properties:
+            Path: /customers/{customerId}
+            Method: put
+            RestApiId: !Ref HttpApiGateway
+
+        DeleteCustomerEndpoint:
+          Type: Api
+          Properties:
+            Path: /customers/{customerId}
+            Method: delete
             RestApiId: !Ref HttpApiGateway
 
 
