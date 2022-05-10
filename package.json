@@ -9,6 +9,7 @@
     "test:ci": "jest --runInBand",
     "test:watch": "jest --watch",
     "clean": "rm -rf -v dist/*",
+    "build:local": "webpack-cli",
     "build": "NODE_ENV=${NODE_ENV:-production} webpack-cli",
     "package": "aws cloudformation package --template-file template.yaml --output-template-file template.packaged.yaml --s3-bucket coding-evaluation-pagaleve-back-${STAGE:-dev}-app",
     "deploy": "aws cloudformation deploy --template-file template.packaged.yaml --stack-name coding-evaluation-pagaleve-back-${STAGE:-dev} --capabilities CAPABILITY_IAM --parameter-overrides Environment=${STAGE:-dev} SamLocalURL=${SamLocalURL:-DISABLED} --no-fail-on-empty-changeset"
