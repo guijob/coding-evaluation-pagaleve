@@ -8,12 +8,8 @@ const customersTable = process.env.CustomersTable;
 
 
 export default async function (event: APIGatewayProxyEvent) {
-    const { parkingLotId } = event.pathParameters;
-    const requesterUser = JSON.parse(event.requestContext.authorizer.user);
 
-    console.info(
-        `endpoint called by ${requesterUser.id}: ${event.httpMethod} ${event.path}`
-    );
+    console.log('Hello world');
 
     return done(200, event, null);
 }
