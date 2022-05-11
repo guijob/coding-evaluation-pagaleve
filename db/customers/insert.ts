@@ -6,16 +6,14 @@ const customersTable = process.env.CustomersTable;
 
 export default async function insert(
     customer: Customer
-): Promise<{ data: Customer }> {
-    const putResp = await documentClient
+): Promise<boolean> {
+    await documentClient
         .put({
             TableName: customersTable,
-            ReturnValues: "ALL_NEW",
+            ReturnValues: "NONE",
             Item: customer,
         })
         .promise();
 
-    return {
-        data: putResp.Attributes as Customer,
-    };
+    return true;
 }
