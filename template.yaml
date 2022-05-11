@@ -61,6 +61,13 @@ Resources:
             Path: /customers
             Method: get
             RestApiId: !Ref HttpApiGateway
+            
+        InsertCustomerEndpoint:
+          Type: Api
+          Properties:
+            Path: /customers
+            Method: post
+            RestApiId: !Ref HttpApiGateway
 
         GetCustomerEndpoint:
           Type: Api
